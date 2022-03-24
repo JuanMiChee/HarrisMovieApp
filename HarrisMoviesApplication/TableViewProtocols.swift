@@ -18,4 +18,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         //cell.textLabel?.text = factsArray[indexPath.row] esto es lo que hay que arreglar pa
         return cell
     }
+    
 }

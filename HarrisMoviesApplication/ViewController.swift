@@ -31,8 +31,6 @@ class ViewController: UIViewController {
                 } else if let error = error {
                     print("HTTP Request Failed \(error)")
                 }
-                
-                
             }
         
         task.resume()
