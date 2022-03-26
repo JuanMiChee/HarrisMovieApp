@@ -21,10 +21,16 @@ class ViewController: UIViewController {
         
         let url = URL(string: "https://cat-fact.herokuapp.com/facts")!
         
-            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            let task = URLSession.shared.dataTask(with: url) {
+                data, response, error in
                 if let data = data {
                     if let facts = try? JSONDecoder().decode([CatFact].self, from: data) {
                         self.factsArray = facts
+                        
+                        DispatchQueue.main.async {
+                        self.catFactTableView.reloadData()
+                        }
+                        
                     } else {
                         print("Invalid Response")
                     }

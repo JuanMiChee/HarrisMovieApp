@@ -15,7 +15,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  catFactTableView.dequeueReusableCell(withIdentifier: "prototypeCell", for: indexPath)
-        //cell.textLabel?.text = factsArray[indexPath.row] esto es lo que hay que arreglar pa
+        let catFact = factsArray[indexPath.row]
+        cell.textLabel?.text = catFact.text
         return cell
     }
     
